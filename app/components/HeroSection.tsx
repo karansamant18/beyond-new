@@ -1,12 +1,12 @@
 import { blinkxBlack } from '@/lib/fonts';
 import React from 'react';
-import Image from 'next/image';
-import 'keen-slider/keen-slider.min.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SliderItem from './SliderItem';
+import Image from 'next/image';
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
     const settings = {
         dots: false,
         infinite: false,
@@ -22,14 +22,34 @@ const HeroSection = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     dots: true,
-
                 }
-
             }
-
         ]
-
     };
+
+    const slides = [
+        {
+            src: "https://images.unsplash.com/photo-1558191053-8edcb01e1da3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            alt: "user",
+            category: "Category",
+            title: "Infosys completes acquisition of semiconductor design services provider 'InSemi'",
+            description: "Infosys has announced that it has completed the acquisition of InSemi, a leading semiconductor design and embedded services provider."
+        },
+        {
+            src: "https://images.unsplash.com/photo-1558191053-8edcb01e1da3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            alt: "user",
+            category: "Category",
+            title: "Infosys completes acquisition of semiconductor design services provider 'InSemi'",
+            description: "Infosys has announced that it has completed the acquisition of InSemi, a leading semiconductor design and embedded services provider."
+        },
+        {
+            src: "https://images.unsplash.com/photo-1558191053-8edcb01e1da3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            alt: "user",
+            category: "Category",
+            title: "Infosys completes acquisition of semiconductor design services provider 'InSemi'",
+            description: "Infosys has announced that it has completed the acquisition of InSemi, a leading semiconductor design and embedded services provider."
+        },
+    ];
 
     return (
         <div className="hero-section bg-white text-center mt-10">
@@ -43,8 +63,6 @@ const HeroSection = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 my-10 mx-6 gap-12">
-                {/* Section 1 */}
-
                 {/* Section 1 */}
                 <div className="relative">
                     <div className="relative">
@@ -74,111 +92,16 @@ const HeroSection = () => {
                 <div className="w-full">
                     <div className="slider-container">
                         <Slider {...settings}>
-                            <div className="mb-6 xs:mb-0">
-                                <div className="grid grid-cols-3 gap-4 items-start">
-                                    <div className="col-span-1 flex justify-center items-center">
-                                        <div className="w-full h-36 lg:h-42 relative">
-                                            <Image
-                                                src="https://images.unsplash.com/photo-1558191053-8edcb01e1da3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                                alt="user"
-                                                className="object-cover w-full h-full"
-                                                height={300}
-                                                width={300}
-                                            />
-                                            <div className="absolute top-2 left-1/2 transform -translate-x-1/2  bg-pink-400 text-white text-[0.6rem] font-semibold py-1 px-2 rounded-full block sm:hidden md:hidden lg:hidden xl:hidden">
-                                                Category
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div className="col-span-2">
-                                        <div className="flex items-start">
-                                            <h2 className="relative text-left text-xs lg:text-sm font-semibold text-black">
-                                                Infosys completes acquisition of semiconductor design services provider 'InSemi'
-                                            </h2>
-                                            <div className="bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded-full hidden md:block lg:block xl:block">
-                                                Category
-                                            </div>
-
-
-
-                                        </div>
-
-
-                                        <p className="text-left text-xs text-black mt-2">
-                                            Infosys has announced that it has completed the acquisition of InSemi, a leading semiconductor design and embedded services provider.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="mb-6 xs:mb-0">
-                                <div className="grid grid-cols-3 gap-4 items-start">
-                                    <div className="col-span-1 flex justify-center items-center">
-                                        <div className="w-full h-36 lg:h-42 relative">
-                                            <Image
-                                                src="https://images.unsplash.com/photo-1558191053-8edcb01e1da3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                                alt="user"
-                                                className="object-cover w-full h-full"
-                                                height={300}
-                                                width={300}
-                                            />
-                                            <div className="absolute top-2 left-1/2 transform -translate-x-1/2  bg-pink-400 text-white text-[0.6rem] font-semibold py-1 px-2 rounded-full block sm:hidden md:hidden lg:hidden xl:hidden">
-                                                Category
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-span-2">
-                                        <div className="flex items-start">
-                                            <h2 className="relative text-left text-xs lg:text-sm font-semibold text-black">
-                                                Infosys completes acquisition of semiconductor design services provider 'InSemi'
-                                            </h2>
-                                            <div className="bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded-full hidden md:block lg:block xl:block">
-                                                Category
-                                            </div>
-
-
-                                        </div>
-                                        <p className="text-left text-xs text-black mt-2">
-                                            Infosys has announced that it has completed the acquisition of InSemi, a leading semiconductor design and embedded services provider.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="">
-                                <div className="grid grid-cols-3 gap-4 items-start">
-                                    <div className="col-span-1 flex justify-center items-center">
-                                        <div className="w-full h-36 lg:h-42 relative">
-                                            <Image
-                                                src="https://images.unsplash.com/photo-1558191053-8edcb01e1da3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                                alt="user"
-                                                className="object-cover w-full h-full"
-                                                height={300}
-                                                width={300}
-                                            />
-                                            <div className="absolute top-2 left-1/2 transform -translate-x-1/2  bg-pink-400 text-white text-[0.6rem] font-semibold py-1 px-2 rounded-full block sm:hidden md:hidden lg:hidden xl:hidden">
-                                                Category
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-span-2">
-                                        <div className="flex items-start">
-                                            <h2 className="relative text-left text-xs lg:text-sm font-semibold text-black">
-                                                Infosys completes acquisition of semiconductor design services provider 'InSemi'
-                                            </h2>
-                                            <div className="bg-gray-800 text-white text-xs font-semibold py-1 px-3 rounded-full hidden md:block lg:block xl:block">
-                                                Category
-                                            </div>
-
-
-                                        </div>
-                                        <p className="text-left text-xs text-black mt-2">
-                                            Infosys has announced that it has completed the acquisition of InSemi, a leading semiconductor design and embedded services provider.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            {slides.map((slide, index) => (
+                                <SliderItem
+                                    key={index}
+                                    src={slide.src}
+                                    alt={slide.alt}
+                                    category={slide.category}
+                                    title={slide.title}
+                                    description={slide.description}
+                                />
+                            ))}
                         </Slider>
                     </div>
                 </div>
